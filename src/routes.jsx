@@ -9,18 +9,12 @@ const routes = [
     path: "/",
     element: <App />,
     errorElement: <ErrorPage />,
-  },
-  {
-    path: "homepage",
-    element: <HomePage />,
-  },
-  {
-    path: "shoppage",
-    element: <ShopPage />,
-  },
-  {
-    path: "checkout",
-    element: <Checkout />,
+    children: [
+      { index: true, element: <HomePage />},
+      { path: "shop", element: <ShopPage />},
+      { path: "checkout", element: <Checkout />},
+      { path: "*", element: <ErrorPage />},
+    ],
   },
 ];
 

@@ -6,13 +6,13 @@ export function NavHeader() {
       <nav>
         <ul>
           <li>
-            <Link to={"homepage"}>Homepage</Link>
+            <Link to={"/"}>Homepage</Link>
           </li>
           <li>
-            <Link to={"shoppage"}>Shop Page</Link>
+            <Link to={"/shop"}>Shop Page</Link>
           </li>
           <li>
-            <Link to={"checkout"}>Checkout</Link>
+            <Link to={"/checkout"}>Checkout</Link>
           </li>
         </ul>
       </nav>
