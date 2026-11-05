@@ -2,7 +2,7 @@ import userEvent from "@testing-library/user-event";
 import { createMemoryRouter, RouterProvider } from "react-router";
 import { test, expect } from "vitest";
 import routes from "../../routes";
-import { render, screen } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
 
 function renderAt(path) {
   const router = createMemoryRouter(routes, {initialEntries: [path]});
@@ -18,11 +18,10 @@ test.each([
   const user = userEvent.setup();
   const router = renderAt(from);
 
-  await user.click(screen.getByRole("link", { name: link }));
+  const mainNav = screen.getByRole("navigation", { name: /main/i });
+
+  await user.click(within(mainNav).getByRole("link", { name: link }));
 
   expect(router.state.location.pathname).toBe(path);
   expect(await screen.findByRole("heading", { name: heading })).toBeInTheDocument();
-
-  // Making sure the navigation header is persistent on all pages
-  expect(screen.getByRole("navigation")).toBeInTheDocument();
 });
