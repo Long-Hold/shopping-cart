@@ -3,7 +3,7 @@ import { Link } from "react-router";
 export function HomePage() {
   return (
     <>
-      <h2>Currently Viewing: HomePage</h2>
+      <h2>Home Page</h2>
       <Link to={"/"}>Back To Directory</Link>
     </>
   )
