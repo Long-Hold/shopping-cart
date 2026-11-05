@@ -3,7 +3,7 @@ import { Link } from "react-router";
 export function NavHeader() {
   return (
     <header>
-      <nav>
+      <nav aria-label="Main">
         <ul>
           <li>
             <Link to={"/"}>Homepage</Link>

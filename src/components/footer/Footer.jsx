@@ -2,7 +2,7 @@ export function Footer() {
   return (
     <footer>
       <p><small>Designed and developed by Matthew Harview.</small></p>
-      <nav>
+      <nav aria-label="Footer">
         <h2>Personal Links</h2>
         <ul>
           <li>
