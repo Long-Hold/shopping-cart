@@ -6,9 +6,16 @@ import { ShopPage } from "./components/pages/shopPage/ShopPage.jsx";
 
 const routes = [
   {
+    id: "root",
     path: "/",
     element: <App />,
     errorElement: <ErrorPage />,
+    loader: async () => {
+      const result = await fetch("https://fakestoreapi.com/products");
+      if (!result.ok) throw new Response("Failed to load products", { status: result.status });
+      return result.json();
+    },
+    HydrateFallback: () => <p>Loading...</p>,
     children: [
       { index: true, element: <HomePage />},
       { path: "shop", element: <ShopPage />},
