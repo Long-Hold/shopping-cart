@@ -4,9 +4,11 @@ import { test, expect } from "vitest";
 import routes from "../../routes";
 import { render, screen, within } from "@testing-library/react";
 
-function renderAt(path) {
+async function renderAt(path) {
   const router = createMemoryRouter(routes, {initialEntries: [path]});
   render(<RouterProvider router={router} />);
+
+  await screen.findByRole("navigation", { name: /main/i });
   return router;
 }
 
@@ -16,7 +18,7 @@ test.each([
   { from: "/", link: /checkout/i, path: "/checkout", heading: /checkout/i },
 ])("clicking $link from $from goes to $path", async ({from, link, path, heading}) => {
   const user = userEvent.setup();
-  const router = renderAt(from);
+  const router = await renderAt(from);
 
   const mainNav = screen.getByRole("navigation", { name: /main/i });
 

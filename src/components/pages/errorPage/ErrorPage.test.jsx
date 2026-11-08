@@ -10,7 +10,7 @@ test("unkown paths render the ErrorPage component and offers a way back", async 
   render(<RouterProvider router={router} />);
 
 
-  const backLink = screen.getByRole("link", { name: /directory/i });
+  const backLink = await screen.findByRole("link", { name: /directory/i });
   await user.click(backLink);
   expect(router.state.location.pathname).toBe("/");
 })
