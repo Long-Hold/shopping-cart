@@ -1,8 +1,6 @@
 import userEvent from "@testing-library/user-event";
-import { createMemoryRouter, RouterProvider } from "react-router";
 import { test, expect } from "vitest";
-import routes from "../../../routes";
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
 import { renderApp } from "../../../tests/utils/renderApp";
 
 test("unkown paths render the ErrorPage component and offers a way back", async () => {
