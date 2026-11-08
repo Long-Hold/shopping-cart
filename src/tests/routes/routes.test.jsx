@@ -1,4 +1,3 @@
-// src/routes.test.jsx (new file)
 import { createMemoryRouter, RouterProvider } from "react-router";
 import { render, screen } from "@testing-library/react";
 import { test, expect, vi } from "vitest";
