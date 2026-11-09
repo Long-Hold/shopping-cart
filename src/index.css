@@ -1,0 +1,21 @@
+@font-face {
+  font-family: "Fira Sans";
+  src: url("./assets/fonts/firasans-regular-webfont.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Some reset stuff */
+li, ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Other universal stylings */
+
+body {
+  font-family:
+    "Fira Sans", system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji";
+}
