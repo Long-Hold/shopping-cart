@@ -13,9 +13,9 @@ export const useCartStore = create((set) => ({
     }
   })),
 
-  removeFromCart: (product) => set((state) => ({
+  removeFromCart: (productId) => set((state) => ({
     items: Object.fromEntries(
-      Object.entries(state.items).filter(([itemId]) => itemId !== String(product.id))
+      Object.entries(state.items).filter(([itemId]) => itemId !== String(productId))
     )
   })),
 }));
