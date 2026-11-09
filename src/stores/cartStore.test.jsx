@@ -1,4 +1,4 @@
-import { test, expect, vi, beforeEach } from "vitest";
+import { test, expect, beforeEach } from "vitest";
 import { useCartStore } from "./cartStore";
 
 beforeEach(() => {
@@ -79,4 +79,41 @@ test("useCartStore.removeFromCart removes the specified item while preserving th
   const { items } = useCartStore.getState();
   expect(items).not.toHaveProperty(String(productToRemove.id));
   expect(items[productToKeep.id]).toStrictEqual({...productToKeep, quantity: mockQuantity});
+});
+
+test("useCartStore.updateQuantity removes item from cart if the new quantity is 0 or less", () => {
+  const mockQuantity = 1;
+  const mockProduct = {id: 1, name: "Pants", price: 100};
+  const { addToCart, updateQuantity } = useCartStore.getState();
+  
+  addToCart(mockProduct.id, mockProduct, mockQuantity);
+
+  // Now I'm passing values that are 0 or less to see if they delete the product
+  const zeroQuantity = 0;
+  updateQuantity(mockProduct.id, zeroQuantity);
+  // Since only one item was added, the array should just be an empty object
+  expect(useCartStore.getState().items).toStrictEqual({});
+
+  // Now I'll test it again with a negative value
+  const negativeQuantity = -1;
+  addToCart(mockProduct.id, mockProduct, mockQuantity);
+  updateQuantity(mockProduct.id, negativeQuantity);
+  expect(useCartStore.getState().items).toStrictEqual({});
+});
+
+test.each(
+  [1, 13, 5583]
+)("useCartStore.updateQuanity updates an item's quantity to the received value (%i)", (newQuantity) => {
+  const initialQuantity = 1;
+  const mockProduct = {id: 1, name: "pants", price: 10};
+  const {addToCart, updateQuantity} = useCartStore.getState();
+
+  addToCart(mockProduct.id, mockProduct, initialQuantity);
+  const originalProductQuantity = useCartStore.getState().items[mockProduct.id].quantity;
+  expect(originalProductQuantity).toEqual(initialQuantity);
+
+  // Now the method should change the quantity to the passed value
+  updateQuantity(mockProduct.id, newQuantity);
+  const updatedProductQuantity = useCartStore.getState().items[mockProduct.id].quantity;
+  expect(updatedProductQuantity).toEqual(newQuantity);
 });
