@@ -32,3 +32,21 @@ test("useCartStore.addToCart creates a new property for a new item while preserv
   expect(useCartStore.getState().items[firstMockProduct.id]).toStrictEqual({...firstMockProduct, quantity: mockQuantity});
   expect(useCartStore.getState().items[secondMockProduct.id]).toStrictEqual({...secondMockProduct, quantity: mockQuantity});
 });
+
+test("useCartStore.addToCart removes the specified item while preserving the other items", () => {
+  const mockQuantity = 10;
+  const productToKeep = {id: 1, name: "Pants", price: 10};
+  const productToRemove = {id: 2, name: "Shirt", price: 10};
+
+  const { addToCart, removeFromCart } = useCartStore.getState();
+
+  addToCart(productToKeep.id, productToKeep, mockQuantity);
+  addToCart(productToRemove.id, productToRemove, mockQuantity);
+  
+  // This test is checking if this item gets removed, and that productToKeep remains
+  removeFromCart(productToRemove);
+
+  const { items } = useCartStore.getState();
+  expect(items).not.toHaveProperty(String(productToRemove.id));
+  expect(items[productToKeep.id]).toStrictEqual({...productToKeep, quantity: mockQuantity});
+})

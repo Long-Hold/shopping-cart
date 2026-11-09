@@ -2,6 +2,7 @@ import { create } from "zustand";
 
 export const useCartStore = create((set) => ({
   items: {},
+
   addToCart: (productId, product, quantity) => set((state) => ({
     items: {
       ...state.items,
@@ -10,5 +11,11 @@ export const useCartStore = create((set) => ({
         quantity: (state.items[productId]?.quantity ?? 0) + quantity,
       }
     }
+  })),
+
+  removeFromCart: (product) => set((state) => ({
+    items: Object.fromEntries(
+      Object.entries(state.items).filter(([itemId]) => itemId !== String(product.id))
+    )
   })),
 }));
