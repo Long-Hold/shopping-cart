@@ -6,10 +6,20 @@
   font-display: swap;
 }
 
+:root {
+  --container-padding: 1rem 1.5rem;
+}
+
 /* Some reset stuff */
 li, ul {
   list-style: none;
   padding: 0;
+}
+
+header,
+main,
+footer {
+  width: 100%;
 }
 
 /* Other universal stylings */
@@ -18,4 +28,18 @@ body {
   font-family:
     "Fira Sans", system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+
+html,
+body,
+#root {
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+#root {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
 }
