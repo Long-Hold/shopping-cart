@@ -1,10 +1,12 @@
 import { Link } from "react-router";
+import styles from "./NavHeader.module.css";
 
 export function NavHeader() {
   return (
-    <header>
-      <nav aria-label="Main">
-        <ul>
+    <header className={styles.navHeader}>
+      <Link to={"/"}>Fakestore</Link>
+      <nav className={styles.nav} aria-label="Main">
+        <ul className={styles.navList}>
           <li>
             <Link to={"/"}>Homepage</Link>
           </li>
