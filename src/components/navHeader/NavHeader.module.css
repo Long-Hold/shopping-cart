@@ -8,10 +8,6 @@
   text-align: center;
 }
 
-.textLogo, .nav {
-  width: 100%;
-}
-
 .textLogo {
   composes: flexCenter from "../../styles/layout.module.css";
   flex-flow: row nowrap;
