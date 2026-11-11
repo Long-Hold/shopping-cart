@@ -8,6 +8,11 @@
 
 :root {
   --container-padding: 1rem 1.5rem;
+  --standard-gap: 1rem;
+  --half-standard-gap: calc(var(--standard-gap) / 2);
+
+  --ivory-white: #FDFAF1;
+  --dividing-border: 2px solid rgba(0, 0, 0, 0.05);
 }
 
 /* Some reset stuff */
@@ -22,6 +27,11 @@ footer {
   width: 100%;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 /* Other universal stylings */
 
 body {
@@ -29,7 +39,6 @@ body {
     "Fira Sans", system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji";
 }
-
 
 html,
 body,
