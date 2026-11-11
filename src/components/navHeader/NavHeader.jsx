@@ -26,7 +26,14 @@ export function NavHeader() {
             <Link className={styles.navLink} to={"/shop"}>Shop</Link>
           </li>
           <li className={styles.checkoutLink}>
-            <Link to={"/checkout"} aria-label="Checkout">
+            <Link 
+              to={"/checkout"} 
+              aria-label={
+                totalItems > 0 ?
+                `Checkout, ${totalItems} ${totalItems === 1 ? "item" : "items"} in cart` :
+                "Checkout"
+              }
+            >
               <Icon path={mdiShoppingOutline} size={1} aria-hidden="true" />
               {totalItems > 0 && <span className={styles.cartItems}>{totalItems}</span> }
             </Link>
