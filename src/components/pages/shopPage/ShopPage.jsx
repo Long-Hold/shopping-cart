@@ -8,20 +8,25 @@ import { ProductCard } from "../../productCard/ProductCard";
 import { Icon } from "@mdi/react";
 import { mdiShoppingOutline, mdiPlus } from "@mdi/js";
 
+import styles from "./ShopPage.module.css";
+
 export function ShopPage() {
   const storeProducts = useRouteLoaderData("root");
   const addToCart = useCartStore((state) => state.addToCart);
 
   return (
     <>
-      <section>
-        <div>
+      <section className={styles.banner}>
+        <div className={styles.bannerText}>
           <h2>Shop</h2>
           <p>
             Our latest line of clothes is the perfect combination of fashion and function. 
             Designed with both style and comfort in mind, these clothes are the ultimate accessory for any adventure. 
             With high-quality materials and attention to detail, our catalogues are not only stylish but also durable enough to withstand whatever your day throws your way. 
             So whether you're walking through the city or exploring the great outdoors, our daily wear will keep you looking and feeling your best.</p>
+        </div>
+        <div className={styles.bannerImage}>
+          <img src="" alt="" width={1200} height={400} />
         </div>
       </section>
 
