@@ -1,0 +1,11 @@
+.banner {
+  background-color: var(--warm-carbon);
+  color: var(--ivory-white);
+  padding: var(--container-padding);
+
+  display: grid;
+  grid-template-columns: minmax(0, 25%) auto;
+  gap: var(--standard-gap);
+  text-align: center;
+  justify-content: center;
+}
