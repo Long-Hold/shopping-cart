@@ -3,10 +3,15 @@ import { Link, useRouteLoaderData } from "react-router";
 import { useState, useId } from "react";
 import { useCartStore } from "../../../stores/cartStore";
 
+import { Hero } from "../../hero/Hero";
 import { ProductCard } from "../../productCard/ProductCard";
 
 import { Icon } from "@mdi/react";
 import { mdiShoppingOutline, mdiPlus } from "@mdi/js";
+
+import desktop1280 from "../../../assets/images/hero1280.webp";
+import desktop1920 from "../../../assets/images/hero1920.webp";
+import desktop2560 from "../../../assets/images/hero2560.webp";
 
 import styles from "./ShopPage.module.css";
 
@@ -16,19 +21,14 @@ export function ShopPage() {
 
   return (
     <>
-      <section className={styles.banner}>
-        <div className={styles.bannerText}>
-          <h2>Shop</h2>
-          <p>
-            Our latest line of clothes is the perfect combination of fashion and function. 
-            Designed with both style and comfort in mind, these clothes are the ultimate accessory for any adventure. 
-            With high-quality materials and attention to detail, our catalogues are not only stylish but also durable enough to withstand whatever your day throws your way. 
-            So whether you're walking through the city or exploring the great outdoors, our daily wear will keep you looking and feeling your best.</p>
-        </div>
-        <div className={styles.bannerImage}>
-          <img src="" alt="" width={1200} height={400} />
-        </div>
-      </section>
+      <Hero
+        title={"Fakestore's Shop"}
+        caption={"Spring Collection, 2026"}
+        alt={"A woman wearing a black, button up coat"}
+        desktop1280={desktop1280}
+        desktop1920={desktop1920}
+        desktop2560={desktop2560}
+      />
 
       <section>
         <ul>

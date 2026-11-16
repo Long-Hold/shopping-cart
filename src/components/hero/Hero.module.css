@@ -1,0 +1,42 @@
+.banner {
+  display: grid;
+  grid-template-rows: auto min(85svh, 900px);
+}
+
+.title {
+  padding: var(--container-padding);
+  font-size: xxx-large;
+  text-align: center;
+}
+
+.figure {
+  position: relative;
+}
+
+.picture {
+  height: 100%;
+}
+
+.figure::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgb(0 0 0 / 0.6), transparent 60%);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  padding: var(--container-padding);
+  color: var(--ivory-white);
+  font-size: xx-large;
+}
