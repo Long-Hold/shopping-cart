@@ -13,6 +13,10 @@ import desktop1280 from "../../../assets/images/hero1280.webp";
 import desktop1920 from "../../../assets/images/hero1920.webp";
 import desktop2560 from "../../../assets/images/hero2560.webp";
 
+import mobile800 from "../../../assets/images/mobile/mobile800.webp";
+import mobile1200 from "../../../assets/images/mobile/mobile1200.webp";
+import mobile1600 from "../../../assets/images/mobile/mobile1600.webp";
+
 import styles from "./ShopPage.module.css";
 
 export function ShopPage() {
@@ -23,11 +27,14 @@ export function ShopPage() {
     <>
       <Hero
         title={"Fakestore's Shop"}
-        caption={"Spring Collection, 2026"}
+        caption={"Style in its purest form."}
         alt={"A woman wearing a black, button up coat"}
         desktop1280={desktop1280}
         desktop1920={desktop1920}
         desktop2560={desktop2560}
+        mobile800={mobile800}
+        mobile1200={mobile1200}
+        mobile1600={mobile1600}
       />
 
       <section>
