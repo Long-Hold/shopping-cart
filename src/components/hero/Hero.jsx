@@ -6,13 +6,21 @@ export function Hero({
   alt="",
   desktop1280, 
   desktop1920, 
-  desktop2560
+  desktop2560,
+  mobile800,
+  mobile1200,
+  mobile1600
 }) {
   return (
     <section className={styles.banner}>
       <h2 className={styles.title}>{title}</h2>
       <figure className={styles.figure}>
         <picture className={styles.picture}>
+          <source 
+            media="(max-width: 37.5rem)"
+            srcSet={`${mobile800} 800w, ${mobile1200} 1200w, ${mobile1600} 1600w`}
+            sizes="100vw"
+          />
           <source
             srcSet={`${desktop1280} 1280w, ${desktop1920} 1920w, ${desktop2560} 2560w`}
             sizes="100vw"
