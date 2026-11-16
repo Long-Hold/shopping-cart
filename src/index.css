@@ -39,4 +39,5 @@ body {
   font-family:
     "Fira Sans", system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--warm-carbon);
 }
