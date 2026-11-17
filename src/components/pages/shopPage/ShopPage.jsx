@@ -37,12 +37,12 @@ export function ShopPage() {
         mobile1600={mobile1600}
       />
 
-      <section>
-        <ul>
+      <section className={styles.productSection}>
+        <ul className={styles.productList}>
           {
             storeProducts.map((product) => {
               return (
-                <li key={product.id}>
+                <li key={product.id} className={styles.productListItem}>
                   <ProductItem product={product} onClick={addToCart} />
                 </li>
               )

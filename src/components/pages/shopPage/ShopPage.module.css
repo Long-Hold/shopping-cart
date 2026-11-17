@@ -1,0 +1,9 @@
+.productSection {
+  padding: var(--container-padding);
+}
+
+.productList {
+  display: flex;
+  flex-flow: row wrap;
+  gap: var(--half-standard-gap);
+}
