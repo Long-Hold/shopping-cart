@@ -1,0 +1,4 @@
+.productCard {
+  composes: flexCenter from "../../styles/layout.module.css";
+  flex-flow: column nowrap;
+}
