@@ -65,6 +65,7 @@ function ProductItem({product, onClick}) {
       <div>
         <label htmlFor={inputId}>Quantity</label>
         <input 
+          className={styles.qtyInput}
           type="number"
           id={inputId}
           name={inputId}
@@ -74,6 +75,7 @@ function ProductItem({product, onClick}) {
           onChange={(e) => setValue(e.target.value)}
         />
         <button
+          className={styles.addItemBtn}
           type="button"
           onClick={() => onClick(product.id, product, parseInt(value))}
           aria-label="Add to cart"

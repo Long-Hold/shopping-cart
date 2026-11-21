@@ -3,7 +3,25 @@
 }
 
 .productList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: var(--standard-gap);
+}
+
+.productListItem {
   display: flex;
-  flex-flow: row wrap;
-  gap: var(--half-standard-gap);
+  flex-flow: column nowrap;
+  justify-content:space-between;
+  align-items: center;
+}
+
+.qtyInput {
+  appearance: none;
+  border: none;
+  outline: 1px solid var(--warm-carbon);
+}
+
+.addItemBtn {
+  display: flex;
+  flex-flow: row nowrap;
 }
