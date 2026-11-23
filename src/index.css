@@ -10,10 +10,17 @@
   --container-padding: 1rem 1.5rem;
   --standard-gap: 1rem;
   --half-standard-gap: calc(var(--standard-gap) / 2);
+  --large-gap: calc(var(--standard-gap) * 2);
 
   --ivory-white: #FDFAF1;
   --warm-carbon: #181715;
   --dividing-border: 2px solid rgba(0, 0, 0, 0.05);
+  --faded-carbon: color-mix(in srgb, var(--warm-carbon) 35%, transparent);
+
+  --radius-sm: 5px;
+  --radius-md: 0.5rem;
+  --hover-bg: #3d3b38;
+  --focus-ring: 2px solid rgb(2 249 2);
 }
 
 /* Some reset stuff */
