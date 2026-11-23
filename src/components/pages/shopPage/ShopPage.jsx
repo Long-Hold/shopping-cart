@@ -63,7 +63,9 @@ function ProductItem({product, onClick}) {
     <>
       <ProductCard {...product} />
       <div>
-        <label htmlFor={inputId}>Quantity</label>
+        <label
+          className={styles.hiddenInput}
+          htmlFor={inputId}>Quantity</label>
         <input 
           className={styles.qtyInput}
           type="number"
