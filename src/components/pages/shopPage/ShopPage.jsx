@@ -7,7 +7,7 @@ import { Hero } from "../../hero/Hero";
 import { ProductCard } from "../../productCard/ProductCard";
 
 import { Icon } from "@mdi/react";
-import { mdiShoppingOutline, mdiPlus } from "@mdi/js";
+import { mdiPlus, mdiMinus } from "@mdi/js";
 
 import desktop1280 from "../../../assets/images/hero1280.webp";
 import desktop1920 from "../../../assets/images/hero1920.webp";
@@ -62,28 +62,44 @@ function ProductItem({product, onClick}) {
   return (
     <>
       <ProductCard {...product} />
-      <div>
-        <label
-          className={styles.hiddenInput}
-          htmlFor={inputId}>Quantity</label>
-        <input 
-          className={styles.qtyInput}
-          type="number"
-          id={inputId}
-          name={inputId}
-          value={value}
-          min="1"
-          step="1"
-          onChange={(e) => setValue(e.target.value)}
-        />
+      <div className={styles.addProductControls}>
+        <div className={styles.inputGroup}>
+          <label
+            className={styles.hiddenInput}
+            htmlFor={inputId}>Quantity</label>
+            <button
+              className={styles.stepButton}
+              type="button"  
+              aria-label="Decrease quantity"
+              onClick={() => setValue((v) => Math.max(1, Number(v) - 1))}
+            >
+              <Icon path={mdiMinus} size={0.8} aria-hidden="true" />
+            </button>
+            <input
+              className={styles.qtyInput}
+              type="number"
+              id={inputId}
+              name={inputId}
+              value={value}
+              min="1"
+              step="1"
+              onChange={(e) => setValue(e.target.value)}
+            />
+            <button
+              className={styles.stepButton}
+              type="button"
+              aria-label="Increase quantity"
+              onClick={() => setValue((v) => Number(v) + 1)}
+            > 
+              <Icon path={mdiPlus} size={0.8} aria-hidden="true" />
+            </button>
+        </div>
         <button
           className={styles.addItemBtn}
           type="button"
           onClick={() => onClick(product.id, product, parseInt(value))}
-          aria-label="Add to cart"
         >
-          <Icon path={mdiShoppingOutline} size={1} aria-hidden="true" />
-          <Icon path={mdiPlus} size={1} aria-hidden="true" />
+          add to cart
         </button>
       </div>
     </>
