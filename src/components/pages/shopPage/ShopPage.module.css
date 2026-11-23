@@ -5,20 +5,16 @@
 .productList {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: var(--standard-gap);
+  gap: var(--large-gap);
 }
 
 .hiddenInput {
   position: absolute;
   width: 1px;
   height: 1px;
-  padding: 0;
-  margin: -1px;
   overflow: hidden;
-  clip: rect(0, 0, 0, 0);
   clip-path: inset(50%);
   white-space: nowrap;
-  border: 0;
 }
 
 .productListItem {
@@ -26,15 +22,82 @@
   flex-flow: column nowrap;
   justify-content:space-between;
   align-items: center;
+  padding: var(--container-padding);
+  box-shadow: 1px 1px 5px var(--faded-carbon);
+  background-color: rgba(232, 224, 224, 0.051);
+  border-radius: var(--radius-md);
+}
+
+.addProductControls {
+  composes: flexCenter from "../../../styles/layout.module.css";
+  flex-flow: column nowrap;
+  gap: var(--half-standard-gap);
+}
+
+.inputGroup {
+  composes: flexCenter from "../../../styles/layout.module.css";
+  align-items: stretch;
+  background-color: var(--warm-carbon);
+  outline: 1px solid var(--warm-carbon);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.inputGroup:has(:focus-visible) {
+  outline: 2px solid var(--warm-carbon);
+  outline-offset: 2px;
 }
 
 .qtyInput {
-  appearance: none;
+  appearance: textfield;
   border: none;
-  outline: 1px solid var(--warm-carbon);
+  field-sizing: content;
+  min-width: 6ch;
+  max-width: 100%;
+  text-align: center;
+  background-color: var(--ivory-white);
+  color: var(--warm-carbon);
+}
+
+.qtyInput::-webkit-inner-spin-button,
+.qtyInput::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.qtyInput:focus {
+  outline: none;
+}
+
+.addItemBtn,
+.stepButton {
+  border: none;
+  color: var(--ivory-white);
+  cursor: pointer;
+}
+
+.stepButton {
+  aspect-ratio: 1;
+  background-color: transparent;
 }
 
 .addItemBtn {
-  display: flex;
-  flex-flow: row nowrap;
+  border-radius: 0.5rem;
+  width: 100%;
+  padding: 0.2rem 0.5rem;
+  background-color: var(--warm-carbon);
+  color: var(--ivory-white);
+  text-transform: capitalize;
+}
+
+.addItemBtn:hover,
+.stepButton:hover {
+  background-color: var(--hover-bg);
+}
+
+.addItemBtn:focus-visible,
+.stepButton:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: -2px;
+  background-color: var(--hover-bg);
 }
