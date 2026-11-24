@@ -1,5 +1,6 @@
 import "./App.css";
 
+import { ViewTransition } from "react";
 import { Outlet } from "react-router";
 import { NavHeader } from "./components/navHeader/NavHeader";
 import { Footer } from "./components/footer/Footer";
@@ -9,9 +10,11 @@ function App() {
     <>
       <div className="mainContent">
         <NavHeader />
-        <main>
-          <Outlet />
-        </main>
+        <ViewTransition>
+          <main>
+            <Outlet />
+          </main>
+        </ViewTransition>
       </div>
       <Footer />
     </>
