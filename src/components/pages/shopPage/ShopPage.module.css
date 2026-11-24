@@ -24,7 +24,7 @@
   align-items: center;
   padding: var(--container-padding);
   box-shadow: 1px 1px 5px var(--faded-carbon);
-  background-color: rgba(232, 224, 224, 0.051);
+  background-color: var(--cool-light-gray);
   border-radius: var(--radius-md);
 }
 
@@ -84,7 +84,7 @@
 .addItemBtn {
   border-radius: 0.5rem;
   width: 100%;
-  padding: 0.2rem 0.5rem;
+  padding: var(--small-item-padding);
   background-color: var(--warm-carbon);
   color: var(--ivory-white);
   text-transform: capitalize;
