@@ -59,6 +59,8 @@ function ProductItem({product, onClick}) {
   const [value, setValue] = useState(1);
   const inputId = useId();
 
+  const normalize = (raw) => Math.max(1, parseInt(raw, 10) || 1);
+
   return (
     <>
       <ProductCard {...product} />
@@ -84,6 +86,7 @@ function ProductItem({product, onClick}) {
               min="1"
               step="1"
               onChange={(e) => setValue(e.target.value)}
+              onBlur={() => setValue(normalize(value))}
             />
             <button
               className={styles.stepButton}
