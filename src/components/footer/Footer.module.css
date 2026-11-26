@@ -1,0 +1,24 @@
+.footer,
+.navList,
+.anchor {
+  composes: flexCenter from "../../styles/layout.module.css";
+}
+
+.footer {
+  flex-flow: column nowrap;
+  text-align: center;
+
+  border-top: var(--dividing-border);
+  background-color: var(--warm-carbon);
+  color: var(--ivory-white);
+  padding: var(--container-padding);
+}
+
+.navList {
+  gap: var(--standard-gap);
+}
+
+.anchor {
+  flex-flow: column nowrap;
+  font-size: smaller;
+}

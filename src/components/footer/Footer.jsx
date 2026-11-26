@@ -1,23 +1,28 @@
+import styles from "./Footer.module.css";
+
 export function Footer() {
   return (
-    <footer>
+    <footer className={styles.footer}>
       <p><small>Designed and developed by Matthew Harview.</small></p>
       <nav aria-label="Footer">
-        <h2>Personal Links</h2>
-        <ul>
+        <h2 className="visuallyHidden">Personal Links</h2>
+        <ul className={styles.navList}>
           <li>
-            <a href="https://github.com/Long-Hold">
+            <a className={styles.anchor} href="https://github.com/Long-Hold">
               <img
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/github/github-original.svg"
                 alt=""
                 width={40}
                 height={40}
+                style={{
+                  filter: "invert(100%)"
+                }}
               />
               GitHub Profile
             </a>
           </li>
           <li>
-            <a href="https://github.com/Long-Hold/shopping-cart">
+            <a className={styles.anchor} href="https://github.com/Long-Hold/shopping-cart">
               <img
                 src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/git/git-original.svg"
                 alt=""
