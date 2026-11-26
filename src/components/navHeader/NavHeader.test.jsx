@@ -13,7 +13,7 @@ beforeEach(() => {
 
 test.each([
   { from: "/shop", link: /^home$/i, path: "/", heading: /home/i },
-  { from: "/", link: /^shop$/i, path: "/shop", heading: /shopPage/i },
+  { from: "/", link: /^shop$/i, path: "/shop", heading: /shop/i },
   { from: "/", link: /^checkout$/i, path: "/checkout", heading: /checkout/i },
 ])("clicking $link from $from goes to $path", async ({from, link, path, heading}) => {
   const user = userEvent.setup();
