@@ -50,7 +50,6 @@ export function ShopPage() {
           }
         </ul>
       </section>
-      <Link to={"/"}>Return to Directory</Link>
     </>
   )
 }
@@ -67,7 +66,7 @@ function ProductItem({product, onClick}) {
       <div className={styles.addProductControls}>
         <div className={styles.inputGroup}>
           <label
-            className={styles.hiddenInput}
+            className="visuallyHidden"
             htmlFor={inputId}>Quantity</label>
             <button
               className={styles.stepButton}

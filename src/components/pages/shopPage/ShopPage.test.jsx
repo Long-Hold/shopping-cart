@@ -166,15 +166,6 @@ test("the header cart badge updates after adding items", async () => {
   ).toBeInTheDocument();
 });
 
-test("the return link goes back to the directory", async () => {
-  const user = userEvent.setup();
-  const router = await renderShop();
-
-  await user.click(screen.getByRole("link", { name: /return to directory/i }));
-
-  expect(router.state.location.pathname).toBe("/");
-});
-
 test.each([
   { scenario: "an empty input", typed: "" },
   { scenario: "zero", typed: "0" },
